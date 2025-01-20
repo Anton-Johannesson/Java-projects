@@ -85,6 +85,12 @@ public class Bank {
 * Returnerar null om inget sådant konto finns.
 */
     public BankAccount findByNumber(int accountNumber){
+        for(int i = 0; i < accounts.size(); i++){
+            if(accounts.get(i).getAccountNumber() == accountNumber){
+                return accounts.get(i);
+            }
+        }
+        return null;
         
     }
 
@@ -94,6 +100,14 @@ public class Bank {
 * Kontona returneras i en lista. Kunderna antas ha unika id-nummer.
 */
     public ArrayList<BankAccount> findAccountsForHolder(long idNr){
+        ArrayList<BankAccount> holderAccounts = new ArrayList<BankAccount>();
+
+        for(int i = 0; i < accounts.size(); i++){
+            if(accounts.get(i).getHolder().getIdNr() == idNr){
+                holderAccounts.add(accounts.get(i));
+            }
+        }
+        return holderAccounts;
         
     }
 
@@ -105,6 +119,14 @@ public class Bank {
 * säga gör ingen skillnad på stora och små bokstäver.
 */
     public ArrayList<Customer> findByPartOfName(String namePart){
+        ArrayList<Customer> partName = new ArrayList<Customer>();
+
+        for(int i = 0; i < accounts.size(); i++){
+            if(accounts.get(i).getHolder().getName().toUpperCase().contains(namePart)){
+                partName.add(accounts.get(i).getHolder());
+            }
+        }
+        return partName;
         
     }
 
