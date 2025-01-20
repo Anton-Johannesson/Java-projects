@@ -104,7 +104,7 @@ public class Bank {
 * flera gånger i resultatet. Sökningen är "case insensitive", det vill
 * säga gör ingen skillnad på stora och små bokstäver.
 */
-    public ArrayList<Customer> findByPartOfName(Sring namePart){
+    public ArrayList<Customer> findByPartOfName(String namePart){
         
     }
 
