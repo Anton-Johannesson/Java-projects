@@ -129,8 +129,18 @@ public class Bank {
         return partName;
         
     }
-
-
-
     
+    public void CheckPlayer(int accountNumber){
+
+		if(this.findByNumber(accountNumber) != null){
+			System.out.println("Kontonummer stämmer inte, kontrollera kontonummer stämmer");
+		} else{
+			System.out.println("Kontonummer stämmer, nu kan du spela för vinstpengar");
+		}
+
+	}
+
+    public void PayWinner(int accountNumber){
+        
+    }
 }

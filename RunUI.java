@@ -143,6 +143,11 @@ public class RunUI {
 
                     break;
 
+                case "10":
+
+                scan.nextLine();
+                RunGame.main(bank);
+
             default:
                 break;
 
@@ -177,6 +182,8 @@ System.out.println("\n");
         System.out.println("8. Skriv ut alla konton som finns på appen, ENDAST FÖR ARBETANDE ");
 System.out.println("\n");
         System.out.println("9. Vill du avsluta appen, välj detta alternativ ");
+System.out.println("\n");
+System.out.println("10. Starta spel ");
 System.out.println("\n");
         System.out.print("Ditt val:  ");
     }

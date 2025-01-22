@@ -5,7 +5,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 
 public class GUI {
-
+    
     private JFrame frame;
     private JPanel panel;
     private JButton addAccount;
@@ -17,12 +17,19 @@ public class GUI {
     private JTextArea textArea;
 
     public GUI(){
+
+        //BankAccount bankAccount = new BankAccount(holderName, holderId);
+
         this.frame = new JFrame("Bank");
         this.panel = new JPanel();
         this.addAccount = new JButton("Add Account");
+        this.addAccount.addActionListener((e) -> System.out.println(e));
         this.removeAccount = new JButton("Remove Account");
         this.findHolder = new JButton("Find Holder");
+
         this.deposit = new JButton("Deposit");
+        this.deposit.addActionListener((_) -> System.out.println("clicked"));
+
         this.withdraw = new JButton("Withdraw");
         this.listAccounts = new JButton("List Accounts");
         this.textArea = new JTextArea(10, 20);
