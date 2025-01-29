@@ -1,9 +1,5 @@
 
 
-//import javax.swing.JOptionPane;
-
-import java.util.Scanner;
-
 import java.util.Scanner;
 
 import javax.swing.JOptionPane;
@@ -12,6 +8,23 @@ public class RunGame {
     public static void main(Bank bank) {
 		Scanner scan = new Scanner(System.in);
 
+		String accountNumberStr = JOptionPane.showInputDialog("Ange ditt kontonummer");
+		int accountNumber = Integer.parseInt(accountNumberStr);
+		try {
+			BankAccount player = bank.findByNumber(accountNumber);
+			JOptionPane.showMessageDialog(null, player, "Bankkonto finns, nu kan du spela", JOptionPane.INFORMATION_MESSAGE);
+		} catch (Exception e) {
+			JOptionPane.showMessageDialog(null, "Kontot finns inte, kontrollera kontonummer", "BankSpel", JOptionPane.INFORMATION_MESSAGE);
+			System.exit(0);
+		}
+
+
+
+
+		try{
+
+
+
 		String[] frontFileNames = { "can.jpg", "flopsy_mopsy_cottontail.jpg", "friends.jpg", "mother_ladybird.jpg",
 		"mr_mcgregor.jpg", "mrs_rabbit.jpg", "mrs_tittlemouse.jpg", "radishes.jpg" };
 
@@ -19,8 +32,8 @@ public class RunGame {
 		GameManager gm = new GameManager(mb);
 	
 
-		System.out.println("Ange ditt kontonummer");
-		int accountNumber = scan.nextInt();
+		/*System.out.println("Ange ditt kontonummer");
+		int accountNumber = scan.nextInt();*/
 		BankAccount player = bank.findByNumber(accountNumber);
 		System.out.println(player);
 
@@ -43,6 +56,7 @@ public class RunGame {
 				gm.waitForMouseClick();
 				r1 = gm.getMouseRow();
 				c1 = gm.getMouseCol();
+				scan.close();
 			}
 			mb.turnCard(r1, c1);
 			gm.drawBoard();
@@ -59,7 +73,7 @@ public class RunGame {
 
 			mb.turnCard(r2, c2);
 			gm.drawBoard();
-			gm.delay(500);
+			SimpleWindow.delay(500);
 
 			if(mb.same(r1, c1, r2, c2) == false){
 				mb.turnCard(r1, c1);
@@ -74,13 +88,15 @@ public class RunGame {
 				tries++;
 			}
 
+			}
+			double sum = 0;
+			if (tries <= 20) {
+				sum = 100;
+			}
+			player.deposit(sum);
+		} catch (Exception e) {
+			JOptionPane.showMessageDialog(null, "Fel inträffade, kontrollera kontonummer", "BankSpel", JOptionPane.INFORMATION_MESSAGE);
+			System.exit(0);
 		}
-		double sum = 0;
-		if (tries <= 20) {
-			sum = 100;
-		}
-		player.deposit(sum);
 	}
-
-	
 }
