@@ -11,7 +11,7 @@ public class GameManager extends SimpleWindow{
 
 	/** Skapar ett fönster som kan visa memorybrädet board. */
 	public GameManager(MatrixBoard matrixBoard) {
-		super(1000, 1000, "Game");
+		super(800, 800, "Game");
 		System.out.println("Ange ditt kontonummer för att kunna ta del av vinsten");
 		System.out.println("vinst summan ligger på 100kr, för att kunna vinna behöver du ett max antal försök på 20");
 
