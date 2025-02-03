@@ -10,10 +10,18 @@ public class RunGame {
 
 		String accountNumberStr = JOptionPane.showInputDialog("Ange ditt kontonummer");
 		int accountNumber = Integer.parseInt(accountNumberStr);
-		try {
+		BankAccount player = bank.findByNumber(accountNumber);
+		/*try {
 			BankAccount player = bank.findByNumber(accountNumber);
 			JOptionPane.showMessageDialog(null, player, "Bankkonto finns, nu kan du spela", JOptionPane.INFORMATION_MESSAGE);
 		} catch (Exception e) {
+			JOptionPane.showMessageDialog(null, "Kontot finns inte, kontrollera kontonummer", "BankSpel", JOptionPane.INFORMATION_MESSAGE);
+			System.exit(0);
+		}*/
+
+		if(bank.findByNumber(accountNumber) != null){
+			JOptionPane.showMessageDialog(null, player, "Bankkonto finns, nu kan du spela", JOptionPane.INFORMATION_MESSAGE);
+		}else if(bank.findByNumber(accountNumber) == null ){
 			JOptionPane.showMessageDialog(null, "Kontot finns inte, kontrollera kontonummer", "BankSpel", JOptionPane.INFORMATION_MESSAGE);
 			System.exit(0);
 		}
@@ -22,9 +30,6 @@ public class RunGame {
 
 
 		try{
-
-
-
 		String[] frontFileNames = { "can.jpg", "flopsy_mopsy_cottontail.jpg", "friends.jpg", "mother_ladybird.jpg",
 		"mr_mcgregor.jpg", "mrs_rabbit.jpg", "mrs_tittlemouse.jpg", "radishes.jpg" };
 
@@ -34,7 +39,7 @@ public class RunGame {
 
 		/*System.out.println("Ange ditt kontonummer");
 		int accountNumber = scan.nextInt();*/
-		BankAccount player = bank.findByNumber(accountNumber);
+		//BankAccount player = bank.findByNumber(accountNumber);
 		System.out.println(player);
 
 		
@@ -82,8 +87,6 @@ public class RunGame {
 				tries++;
 			} else if(mb.same(r1, c1, r2, c2) == true && mb.hasWon()){
 				tries++;
-				JOptionPane.showMessageDialog(null, "Dina försök: " + tries, "BankSpel",
-						JOptionPane.INFORMATION_MESSAGE);
 			} else{
 				tries++;
 			}
@@ -92,7 +95,10 @@ public class RunGame {
 			double sum = 0;
 			if (tries <= 20) {
 				sum = 100;
-			}
+			}/*else if(tries > 20){
+				JOptionPane.showMessageDialog(null, "Du har fler försök än 20, vänligen starta spelet igen", "BankSpel",
+						JOptionPane.INFORMATION_MESSAGE);
+			}*/
 			player.deposit(sum);
 		} catch (Exception e) {
 			JOptionPane.showMessageDialog(null, "Fel inträffade, kontrollera kontonummer", "BankSpel", JOptionPane.INFORMATION_MESSAGE);

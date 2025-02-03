@@ -158,33 +158,31 @@ public class RunUI {
 
     public static void textMenu(){
         System.out.println("- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - ");
-System.out.println("\n");
         
         System.out.println("Hej, välkommen till denna bank appen. Vi finns här för att underlätta dit liv. ");
-System.out.println("\n");
+
         System.out.println("Välj gärna en av följande alternativ, vi erbjuder mycket bra ränta. ");
-System.out.println("\n");
 
         System.out.println("1. Skapa nya konton ");//CASE 6
-System.out.println("\n");
+
         System.out.println("2. Ta bort konton du har ");//CASE 7
-System.out.println("\n");
+
         System.out.println("3. Sätt in pengar på konto, kontonummer måste anges korrekt! ");
-System.out.println("\n");
+
         System.out.println("4. Ta ut pengar från konto, kontonummer måste anges korrekt! ");
-System.out.println("\n");
+
         System.out.println("5. Vill du överföra pengar mellan olika konton, använd detta alternativ ");
-System.out.println("\n");
+
         System.out.println("6. Hitta konto utifrån innehavare ");//CASE 1
-System.out.println("\n");
+
         System.out.println("7. Sök kontoinnehavare utifrån del av namn ");//CASE 2
-System.out.println("\n");
+
         System.out.println("8. Skriv ut alla konton som finns på appen, ENDAST FÖR ARBETANDE ");
-System.out.println("\n");
-        System.out.println("9. Vill du avsluta appen, välj detta alternativ ");
-System.out.println("\n");
+
+        System.out.println("9. Vill du avsluta appen, välj detta alternativ ");//System.out.println("\n");
+        
 System.out.println("10. Starta spel ");
-System.out.println("\n");
+
         System.out.print("Ditt val:  ");
     }
     
