@@ -8,6 +8,7 @@ public class RunGame {
     public static void main(Bank bank) {
 		Scanner scan = new Scanner(System.in);
 
+		
 		String accountNumberStr = JOptionPane.showInputDialog("Ange ditt kontonummer");
 		int accountNumber = Integer.parseInt(accountNumberStr);
 		BankAccount player = bank.findByNumber(accountNumber);
@@ -19,12 +20,14 @@ public class RunGame {
 			System.exit(0);
 		}*/
 
-		if(bank.findByNumber(accountNumber) != null){
-			JOptionPane.showMessageDialog(null, player, "Bankkonto finns, nu kan du spela", JOptionPane.INFORMATION_MESSAGE);
-		}else if(bank.findByNumber(accountNumber) == null ){
-			JOptionPane.showMessageDialog(null, "Kontot finns inte, kontrollera kontonummer", "BankSpel", JOptionPane.INFORMATION_MESSAGE);
-			System.exit(0);
-		}
+			if(bank.findByNumber(accountNumber) != null){
+				JOptionPane.showMessageDialog(null, player, "Bankkonto finns, nu kan du spela", JOptionPane.INFORMATION_MESSAGE);
+			}else if(bank.findByNumber(accountNumber) == null ){
+				JOptionPane.showMessageDialog(null, "Kontot finns inte, kontrollera kontonummer", "BankSpel", JOptionPane.INFORMATION_MESSAGE);
+				System.exit(0);
+			}
+
+
 
 
 
@@ -40,7 +43,7 @@ public class RunGame {
 		/*System.out.println("Ange ditt kontonummer");
 		int accountNumber = scan.nextInt();*/
 		//BankAccount player = bank.findByNumber(accountNumber);
-		System.out.println(player);
+		//System.out.println(player);
 
 		
 

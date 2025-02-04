@@ -1,10 +1,13 @@
-/* 
+/*
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 
 public class GUI {
+    public static void main(String[] args) {
+        GUI gui = new GUI();
+    }
     
     private JFrame frame;
     private JPanel panel;
@@ -52,23 +55,7 @@ public class GUI {
         createComponents(frame.getContentPane());
         frame.pack();
         frame.setVisible(true);
-    }
-
-    public static void main(String[] args){
-        GUI gui = new GUI();
-        gui.run();
-    }
-
-
-   
-
-
-
-
-
-
-
-    
+    }    
 }
 
 
