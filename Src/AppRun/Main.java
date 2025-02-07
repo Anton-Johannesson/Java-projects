@@ -1,9 +1,8 @@
 package Src.AppRun;
+
 import java.util.Scanner;
 
-import Src.RunUI;
-
-public class RunBankApp {
+public class Main {
     public static void main(String[] args) {
         Bank bank = new Bank();
         //SimpleWindow sw = new SimpleWindow(1000, 1000, "Banken");

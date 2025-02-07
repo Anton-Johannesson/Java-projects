@@ -1,6 +1,7 @@
 package Src.AppRun;
 
 
+
 import java.util.Scanner;
 
 import javax.swing.JOptionPane;
@@ -36,8 +37,8 @@ public class RunGame {
 
 
 		try{
-		String[] frontFileNames = { "can.jpg", "flopsy_mopsy_cottontail.jpg", "friends.jpg", "mother_ladybird.jpg",
-		"mr_mcgregor.jpg", "mrs_rabbit.jpg", "mrs_tittlemouse.jpg", "radishes.jpg" };
+		String[] frontFileNames = { "can.jpg", "flopsy_mopsy_cottontail.jpg", "friends.jpg", "mother_ladybird.jpg", "mr_mcgregor.jpg", "mrs_rabbit.jpg", "mrs_tittlemouse.jpg", "radishes.jpg" };
+		//String[] frontFileNames = {"992-GT3.jpg", "draken-j35.jpg", "F-35A.jpg", "Jas39E.jpg", "Agera-RS.jpg", "Jesko.webp", "W15.avif", "Viggen.jpg"};
 
 		MatrixBoard mb = new MatrixBoard(4, "back.jpg", frontFileNames);
 		GameManager gm = new GameManager(mb);

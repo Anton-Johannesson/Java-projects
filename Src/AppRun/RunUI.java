@@ -1,11 +1,7 @@
-package Src;
+package Src.AppRun;
+
 import java.util.ArrayList;
 import java.util.Scanner;
-
-import Src.AppRun.Bank;
-import Src.AppRun.BankAccount;
-import Src.AppRun.Customer;
-import Src.AppRun.RunGame;
 public class RunUI {
     static Scanner scan = new Scanner(System.in);
     

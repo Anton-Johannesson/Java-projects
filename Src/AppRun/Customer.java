@@ -1,5 +1,6 @@
 package Src.AppRun;
 
+
 public class Customer {
     private String name;
     private long idNr;
