@@ -2,7 +2,11 @@ package Src.AppRun;
 
 
 
+import java.io.File;
 import java.util.Scanner;
+import java.util.Set;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 import javax.swing.JOptionPane;
 
@@ -10,6 +14,7 @@ import Tools.SimpleWindow;
 
 public class RunGame {
     public static void main(Bank bank) {
+		System.out.println(RunGame.listFilesUsingJavaIO("Src/AppRun/PicturesMatrix"));
 		Scanner scan = new Scanner(System.in);
 
 		
@@ -37,10 +42,15 @@ public class RunGame {
 
 
 		try{
-		String[] frontFileNames = { "can.jpg", "flopsy_mopsy_cottontail.jpg", "friends.jpg", "mother_ladybird.jpg", "mr_mcgregor.jpg", "mrs_rabbit.jpg", "mrs_tittlemouse.jpg", "radishes.jpg" };
-		//String[] frontFileNames = {"992-GT3.jpg", "draken-j35.jpg", "F-35A.jpg", "Jas39E.jpg", "Agera-RS.jpg", "Jesko.webp", "W15.avif", "Viggen.jpg"};
+		//String[] frontFileNames = { "can.jpg", "flopsy_mopsy_cottontail.jpg", "friends.jpg", "mother_ladybird.jpg", "mr_mcgregor.jpg", "mrs_rabbit.jpg", "mrs_tittlemouse.jpg", "radishes.jpg" };
+		
+		String[] frontFileNames = {"Src/AppRun/PicturesMatrix/992-GT3.jpg", "Src/AppRun/PicturesMatrix/draken-j35.jpg", "Src/AppRun/PicturesMatrix/F-35A.jpg", 
+		"Src/AppRun/PicturesMatrix/Jas39E.jpg", "Src/AppRun/PicturesMatrix/Agera-RS.jpg", "Src/AppRun/PicturesMatrix/Jesko.jpg", 
+		"Src/AppRun/PicturesMatrix/W15.jpg", "Src/AppRun/PicturesMatrix/Viggen.jpg"};
+		
+		//String[] frontFileNames = {"Src/AppRun/PicturesMatrix/Viggen.jpg"};
 
-		MatrixBoard mb = new MatrixBoard(4, "back.jpg", frontFileNames);
+		MatrixBoard mb = new MatrixBoard(4, "Src/AppRun/PicturesMatrix/Back.jpg", frontFileNames);
 		GameManager gm = new GameManager(mb);
 	
 
@@ -53,6 +63,7 @@ public class RunGame {
 
 		int tries = 0;
 		while(!mb.hasWon()){
+			System.out.println(mb.hasWon());
 
 			gm.drawBoard();
 			int r1;
@@ -99,17 +110,25 @@ public class RunGame {
 			}
 
 			}
+			System.out.println("Hello tesm: " + tries);
 			double sum = 0;
 			if (tries <= 20) {
 				sum = 100;
-			}/*else if(tries > 20){
-				JOptionPane.showMessageDialog(null, "Du har fler försök än 20, vänligen starta spelet igen", "BankSpel",
-						JOptionPane.INFORMATION_MESSAGE);
-			}*/
+				JOptionPane.showMessageDialog(null, tries, "Du har vunnit 100kr, med såhär många försök", JOptionPane.INFORMATION_MESSAGE);
+			}else if(tries > 20){
+				JOptionPane.showMessageDialog(null, tries, "Du har använt fler försök än 20", JOptionPane.INFORMATION_MESSAGE);
+			}
+			
 			player.deposit(sum);
 		} catch (Exception e) {
 			JOptionPane.showMessageDialog(null, "Fel inträffade, kontrollera kontonummer", "BankSpel", JOptionPane.INFORMATION_MESSAGE);
 			System.exit(0);
 		}
 	}
+	public static Set<String> listFilesUsingJavaIO(String dir) {
+    return Stream.of(new File(dir).listFiles())
+      .filter(file -> !file.isDirectory())
+      .map(File::getName)
+      .collect(Collectors.toSet());
+}
 }

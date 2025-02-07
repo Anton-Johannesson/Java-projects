@@ -18,7 +18,7 @@ public class MatrixBoard{
         CreateImage(backFileName, frontFileName);
         //Bank bank = new Bank();
     }
-
+    
     private void CreateImage(String backFileName, String[] frontFileName){
         Random rand = new Random();
 
