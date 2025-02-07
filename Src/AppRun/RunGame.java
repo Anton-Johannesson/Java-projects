@@ -1,8 +1,11 @@
+package Src.AppRun;
 
 
 import java.util.Scanner;
 
 import javax.swing.JOptionPane;
+
+import Tools.SimpleWindow;
 
 public class RunGame {
     public static void main(Bank bank) {

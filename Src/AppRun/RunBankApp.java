@@ -1,4 +1,7 @@
+package Src.AppRun;
 import java.util.Scanner;
+
+import Src.RunUI;
 
 public class RunBankApp {
     public static void main(String[] args) {

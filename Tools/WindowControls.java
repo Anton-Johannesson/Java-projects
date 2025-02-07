@@ -1,3 +1,4 @@
+package Tools;
 //package se.lth.cs.pt.window;
 
 import java.awt.Image;

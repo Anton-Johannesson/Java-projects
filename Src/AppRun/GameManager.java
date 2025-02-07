@@ -1,6 +1,9 @@
+package Src.AppRun;
 
 import java.awt.Image;
 import java.util.Scanner;
+
+import Tools.SimpleWindow;
 
 
 public class GameManager extends SimpleWindow{
